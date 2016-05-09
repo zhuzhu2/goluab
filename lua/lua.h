@@ -201,7 +201,7 @@ LUA_API int   (lua_setfenv) (lua_State *L, int idx);
 LUA_API void  (lua_call) (lua_State *L, int nargs, int nresults);
 LUA_API int   (lua_pcall) (lua_State *L, int nargs, int nresults, int errfunc);
 LUA_API int   (lua_cpcall) (lua_State *L, lua_CFunction func, void *ud);
-LUA_API int   (lua_loadfilex) (lua_State *L, lua_Reader reader, void *dt,
+LUA_API int   (luaL_loadfilex) (lua_State *L, lua_Reader reader, void *dt,
                                         const char *chunkname);
 
 LUA_API int (lua_dump) (lua_State *L, lua_Writer writer, void *data);
