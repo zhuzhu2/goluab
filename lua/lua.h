@@ -366,7 +366,6 @@ LUA_API void      (lua_setallocf) (lua_State *L, lua_Alloc f, void *ud);
 #define lua_tostring(L,i)	lua_tolstring(L, (i), NULL)
 
 
-#define lua_insert(L,idx)	lua_rotate(L, (idx), 1)
 
 #define lua_remove(L,idx)	(lua_rotate(L, (idx), -1), lua_pop(L, 1))
 
