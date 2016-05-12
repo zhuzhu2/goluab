@@ -270,9 +270,6 @@ func (L *State) GetTable(index int) { C.lua_gettable(L.s, C.int(index)) }
 // lua_gettop
 func (L *State) GetTop() int { return int(C.lua_gettop(L.s)) }
 
-// lua_insert
-func (L *State) Insert(index int) { C.lua_insert(L.s, C.int(index)) }
-
 // Returns true if lua_type == LUA_TBOOLEAN
 func (L *State) IsBoolean(index int) bool {
 	return LuaValType(C.lua_type(L.s, C.int(index))) == LUA_TBOOLEAN
@@ -440,16 +437,6 @@ func (L *State) RawSeti(index int, n int) {
 func (L *State) Register(name string, f LuaGoFunction) {
 	L.PushGoFunction(f)
 	L.SetGlobal(name)
-}
-
-// lua_remove
-func (L *State) Remove(index int) {
-	C.lua_remove(L.s, C.int(index))
-}
-
-// lua_replace
-func (L *State) Replace(index int) {
-	C.lua_replace(L.s, C.int(index))
 }
 
 // lua_resume
