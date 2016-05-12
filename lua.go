@@ -534,12 +534,12 @@ func (L *State) ToString(index int) string {
 
 // lua_tointeger
 func (L *State) ToInteger(index int) int {
-	return int(C.lua_tointegerx(L.s, C.int(index), nil))
+	return int(C.lua_tointeger(L.s, C.int(index), nil))
 }
 
 // lua_tonumber
 func (L *State) ToNumber(index int) float64 {
-	return float64(C.lua_tonumberx(L.s, C.int(index), nil))
+	return float64(C.lua_tonumber(L.s, C.int(index), nil))
 }
 
 // lua_topointer
